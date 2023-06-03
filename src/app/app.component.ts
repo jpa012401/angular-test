@@ -47,6 +47,7 @@ export class AppComponent {
     });
         
   }
+  
   convert(number: string){
     // set the base/start unicode
     const base = 'A'.charCodeAt(0) - 1;
