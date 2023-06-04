@@ -1,0 +1,24 @@
+<div class="container">
+
+    <input class="input-txt" type="text" [formControl]="showField">
+    <input class="input-txt" type="text" [formControl]="resultField">
+    <!-- css grid number button -->
+    <div class="grid-container">
+      <div (click)="clickNum('1')" class="grid-item">1</div>
+      <div (click)="clickNum('2')" class="grid-item">2</div>
+      <div (click)="clickNum('3')" class="grid-item">3</div>
+    
+      <div (click)="clickNum('4')" class="grid-item">4</div>
+      <div (click)="clickNum('5')" class="grid-item">5</div>
+      <div (click)="clickNum('6')" class="grid-item">6</div>
+  
+      <div (click)="clickNum('7')" class="grid-item">7</div>
+      <div (click)="clickNum('8')" class="grid-item">8</div>
+      <div (click)="clickNum('9')" class="grid-item">9</div>
+  
+      <div (click)="clickNum('#')" class="grid-item">#</div>
+      <div (click)="clickNum('0')" class="grid-item">0</div>
+      <div (click)="delLast(showField.value)" class="grid-item"><-</div>
+  
+    </div>
+  </div>
