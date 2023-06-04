@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ConvertService } from 'src/app/service/convert.service';
 
 @Component({
   selector: 'app-number-to-text',
@@ -9,9 +10,9 @@ import { FormControl } from '@angular/forms';
 export class NumberToTextComponent {
   showField: FormControl = new FormControl('');
   resultField = new FormControl();
-  constructor(){
-
-  }
+  constructor(
+    private convertService: ConvertService,
+  ){}
   
   clickNum(button: string){
     // console.log(button)
@@ -41,27 +42,12 @@ export class NumberToTextComponent {
       if(element === ''){
         
       }else{
-        this.resultField.setValue(this.resultField.value + this.convert(element));
+        this.resultField.setValue(this.resultField.value + this.convertService.convert(element));
       }
       
     });
         
   }
   
-  convert(number: string){
-    // set the base/start unicode
-    const base = 'A'.charCodeAt(0) - 1;
-    // convert string number and rounded the number
-    const letterNumber = (Number(number))%26 +1;
-    console.log(letterNumber, base)
-    
-    if(letterNumber >= 0){
-      // convert the unicode to text in the sequence of UTF-16
-      const letter = String.fromCharCode(base + letterNumber);
-      return letter
-    }else{
-      return 
-    }
-    
-  }
+  
 }
