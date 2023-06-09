@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NumberToTextComponent } from './number-to-text.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('NumberToTextComponent', () => {
   let component: NumberToTextComponent;
@@ -8,7 +9,10 @@ describe('NumberToTextComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NumberToTextComponent ]
+      declarations: [ NumberToTextComponent ],
+      imports:[
+        ReactiveFormsModule,
+      ]
     })
     .compileComponents();
 
@@ -18,6 +22,8 @@ describe('NumberToTextComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(NumberToTextComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
 });
