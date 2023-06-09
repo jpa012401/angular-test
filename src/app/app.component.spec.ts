@@ -4,12 +4,14 @@ import { AppComponent } from './app.component';
 import { NumberToTextComponent } from './component/number-to-text/number-to-text.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        ReactiveFormsModule
       ],
       declarations: [
         AppComponent,
@@ -24,13 +26,13 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   })
 
-  // it('should render number-to-text component', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const debugElement: DebugElement = fixture.debugElement;
-  //   const otherComponent = debugElement.query(By.directive(NumberToTextComponent));
-  //   expect(otherComponent).toBeTruthy(); // Check if the other component is rendered
-  // });
+  it('should render number-to-text component', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const debugElement: DebugElement = fixture.debugElement;
+    const otherComponent = debugElement.query(By.directive(NumberToTextComponent));
+    expect(otherComponent).toBeTruthy(); // Check if the other component is rendered
+  });
 
   // it(`should have as title 'angular-test'`, () => {
   //   const fixture = TestBed.createComponent(AppComponent);
