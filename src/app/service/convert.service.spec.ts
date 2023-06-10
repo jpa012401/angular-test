@@ -13,4 +13,9 @@ describe('ConvertService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should return the converted letter A', ()=>{
+    expect(service.convert('0')).toBe('A');
+    expect(service.convert('26')).toBe('A');
+  })  
 });
