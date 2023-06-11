@@ -1,7 +1,7 @@
 <div class="container">
 
-    <input class="input-txt" type="text" [formControl]="showField">
-    <input class="input-txt" type="text" [formControl]="resultField">
+    <input class="input-txt" type="text" [value]="inputValue$ | async">
+    <input class="input-txt" type="text" [value]="resultValue$| async">
     <!-- css grid number button -->
     <div class="grid-container">
       <div (click)="clickNum('1')" class="grid-item">1</div>
@@ -18,7 +18,7 @@
   
       <div (click)="clickNum('#')" class="grid-item">#</div>
       <div (click)="clickNum('0')" class="grid-item">0</div>
-      <div (click)="delLast(showField.value)" class="grid-item"><-</div>
+      <div (click)="delLast()" class="grid-item"><-</div>
   
     </div>
   </div>

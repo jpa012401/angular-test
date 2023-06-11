@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NumberToTextComponent } from './component/number-to-text/number-to-text.component';
+import { StoreModule } from '@ngrx/store';
+import { collectionReducer } from './ngrxState/number-to-text.reducer';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { NumberToTextComponent } from './component/number-to-text/number-to-text
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({converter: collectionReducer}),
   ],
   providers: [],
   bootstrap: [AppComponent]
