@@ -2,6 +2,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NumberToTextComponent } from './number-to-text.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { collectionReducer } from 'src/app/ngrxState/number-to-text.reducer';
+
 
 describe('NumberToTextComponent', () => {
   let component: NumberToTextComponent;
@@ -12,6 +15,7 @@ describe('NumberToTextComponent', () => {
       declarations: [ NumberToTextComponent ],
       imports:[
         ReactiveFormsModule,
+        StoreModule.forRoot({converter: collectionReducer}),
       ]
     })
     .compileComponents();

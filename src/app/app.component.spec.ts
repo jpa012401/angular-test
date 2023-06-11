@@ -5,13 +5,17 @@ import { NumberToTextComponent } from './component/number-to-text/number-to-text
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { collectionReducer } from './ngrxState/number-to-text.reducer';
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        StoreModule.forRoot({converter: collectionReducer})
       ],
       declarations: [
         AppComponent,
@@ -34,11 +38,6 @@ describe('AppComponent', () => {
     expect(otherComponent).toBeTruthy(); // Check if the other component is rendered
   });
 
-  // it(`should have as title 'angular-test'`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.componentInstance;
-  //   expect(app.title).toEqual('angular-test');
-  // });
 
   
 });
